@@ -316,13 +316,13 @@ int CFtdiDeviceDescr::CreateBaoFarm(CFtdiDeviceDescr *descr, std::vector<CVocode
     
     // create the interfaces for the four 3000 chips
     CUsb3000BaoFarmInterface *UsbBaoFarmA =
-        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), "BAOFARM1_A", descr->GetSerialNumber());
+        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), descr->GetChannelDescription(0), descr->GetChannelSerialNumber(0));
     CUsb3000BaoFarmInterface *UsbBaoFarmB =
-        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), "BAOFARM1_B", descr->GetSerialNumber());
+        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), descr->GetChannelDescription(1), descr->GetChannelSerialNumber(1));
     CUsb3000BaoFarmInterface *UsbBaoFarmC =
-        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), "BAOFARM1_C", descr->GetSerialNumber());
+        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), descr->GetChannelDescription(2), descr->GetChannelSerialNumber(2));
     CUsb3000BaoFarmInterface *UsbBaoFarmD =
-        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), "BAOFARM1_D", descr->GetSerialNumber());
+        new CUsb3000BaoFarmInterface(descr->GetVid(), descr->GetPid(), descr->GetChannelDescription(3), descr->GetChannelSerialNumber(3));
 
     // init the interfaces
     if ( UsbBaoFarmA->Init(CODEC_AMBEPLUS) && UsbBaoFarmB->Init(CODEC_AMBE2PLUS) && UsbBaoFarmC->Init(CODEC_AMBEPLUS) && UsbBaoFarmD->Init(CODEC_AMBE2PLUS))
