@@ -131,6 +131,7 @@ bool CVocodecs::Init(void)
             {
                 descr2 = m_FtdiDeviceDescrs[j];
                 found = (!descr2->IsUsed() && (descr2->GetNbChannels() == 1));
+                j++;
             }
             // found one ?
             if ( found )
@@ -160,6 +161,7 @@ bool CVocodecs::Init(void)
             {
                 descr2 = m_FtdiDeviceDescrs[j];
                 found = (!descr2->IsUsed() && IsOdd(descr2->GetNbChannels()));
+                j++;
             }
             // found one ?
             if ( found )
